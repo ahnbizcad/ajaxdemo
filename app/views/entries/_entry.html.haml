@@ -1,0 +1,11 @@
+/ index.html.haml - entries
+/  = render "entires/entry", collection: @entries, as: :entry
+%li{ id: "entry-#{entry.id}" }
+
+  = entry.body
+
+  = link_to edit_entry_path(entry), remote: true do
+    %button "Edit"
+
+  = link_to entry, method: :delete, data: { confirm: "Delete?" }, remote: true do
+    %button "Delete"

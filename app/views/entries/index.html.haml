@@ -1,0 +1,9 @@
+%h1 Listing entries
+
+= link_to new_entry_path, remote: true do
+  New
+
+#entry-form{ display: "none" }
+
+%ul#entries
+  = render partial: 'entries/entry', collection: @entries, as: :entry
